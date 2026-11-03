@@ -1,0 +1,16 @@
+crop,state,total_production_t,rank_in_crop
+Rice,West Bengal,258092849.0,1
+Rice,Uttar Pradesh,218793359.0,2
+Rice,Punjab,157828000.0,3
+Rice,Andhra Pradesh,128132644.0,4
+Rice,Odisha,113130742.0,5
+Sugarcane,Uttar Pradesh,2202874890.0,1
+Sugarcane,Maharashtra,938485965.0,2
+Sugarcane,Karnataka,515845482.0,3
+Sugarcane,Tamil Nadu,510308456.0,4
+Sugarcane,Andhra Pradesh,226730305.0,5
+Wheat,Uttar Pradesh,469911750.0,1
+Wheat,Punjab,227436000.0,2
+Wheat,Madhya Pradesh,146571039.0,3
+Wheat,Haryana,142168000.0,4
+Wheat,Rajasthan,94669124.0,5

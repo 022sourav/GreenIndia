@@ -1,0 +1,55 @@
+crop,state,yield_1998_2000,yield_2012_2014,growth_percent
+Rice,Chhattisgarh,0.63,1.91,203.9
+Rice,Madhya Pradesh,0.74,1.71,131.8
+Rice,Gujarat,1.33,2.14,61.1
+Rice,Bihar,1.49,2.39,60.6
+Rice,Meghalaya,1.57,2.4,53.0
+Rice,Nagaland,1.5,2.27,51.4
+Rice,Assam,1.43,2.08,44.7
+Rice,Haryana,2.39,3.27,37.0
+Rice,Tripura,2.11,2.83,34.1
+Rice,Arunachal Pradesh,1.07,1.42,33.2
+Rice,Kerala,2.14,2.75,28.3
+Rice,Puducherry,2.37,3.03,28.3
+Rice,Sikkim,1.42,1.81,27.3
+Rice,Maharashtra,1.55,1.94,25.3
+Rice,West Bengal,2.26,2.81,24.2
+Rice,Telangana,2.66,3.26,22.6
+Rice,Odisha,1.13,1.33,17.9
+Rice,Uttar Pradesh,2.04,2.39,17.5
+Rice,Karnataka,2.57,2.9,12.7
+Rice,Uttarakhand,2.04,2.29,12.3
+Rice,Andhra Pradesh,2.85,3.2,12.2
+Rice,Punjab,3.34,3.74,12.1
+Rice,Dadra and Nagar Haveli,1.86,1.89,1.6
+Rice,Tamil Nadu,3.35,2.74,-18.2
+Rice,Jammu and Kashmir,1.63,1.25,-23.4
+Sugarcane,Madhya Pradesh,27.52,50.79,84.5
+Sugarcane,Haryana,56.04,74.5,32.9
+Sugarcane,Telangana,69.8,86.76,24.3
+Sugarcane,Bihar,44.5,53.91,21.1
+Sugarcane,West Bengal,73.21,88.22,20.5
+Sugarcane,Punjab,62.26,73.76,18.5
+Sugarcane,Uttar Pradesh,56.89,63.97,12.4
+Sugarcane,Odisha,60.8,67.33,10.7
+Sugarcane,Uttarakhand,58.65,59.49,1.4
+Sugarcane,Maharashtra,87.37,86.35,-1.2
+Sugarcane,Andhra Pradesh,79.53,76.05,-4.4
+Sugarcane,Assam,38.94,36.45,-6.4
+Sugarcane,Tamil Nadu,108.44,100.45,-7.4
+Sugarcane,Karnataka,101.87,88.55,-13.1
+Sugarcane,Gujarat,70.07,7.14,-89.8
+Wheat,Jammu and Kashmir,0.53,1.59,200.2
+Wheat,Madhya Pradesh,1.74,2.73,56.9
+Wheat,Telangana,0.6,0.88,45.8
+Wheat,Chhattisgarh,1.02,1.41,37.9
+Wheat,Gujarat,2.29,2.88,25.7
+Wheat,Uttarakhand,1.88,2.28,21.0
+Wheat,West Bengal,2.32,2.8,20.5
+Wheat,Karnataka,0.86,1.03,19.1
+Wheat,Bihar,2.15,2.44,13.6
+Wheat,Assam,1.16,1.28,10.0
+Wheat,Haryana,4.07,4.44,9.3
+Wheat,Maharashtra,1.31,1.38,5.7
+Wheat,Uttar Pradesh,2.69,2.82,4.5
+Wheat,Punjab,4.47,4.44,-0.8

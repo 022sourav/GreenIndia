@@ -1,0 +1,4 @@
+Model,MAE all crops (t/ha),MAE rice+wheat (t/ha),R2 all crops
+Baseline (crop average),6.522,0.783,0.714
+Linear Regression,4.907,0.635,0.813
+Random Forest,3.532,0.55,0.894

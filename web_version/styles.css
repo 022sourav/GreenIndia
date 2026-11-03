@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: linear-gradient(to right,rgb(247, 243, 247),rgb(251, 251, 253));
+}
+.nav-bar{
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo img{
+    width: 11vw;
+}
+.nav-links{
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 15rem;
+}
+.nav-links li{
+    /* background-color: grey; */
+    list-style: none;
+    padding: 1.1rem;
+    font-size: 1.5rem;
+}
+.nav-links li a{
+    text-decoration: none;
+    color: black;
+}
+.search-box{
+    /* background-color: blue; */
+    position: relative;
+    right: 1.5rem;
+}
+.search-box input:first-child{
+    font-size: .9rem;
+    padding: .5rem;
+    height: 1.1rem;
+    width: 11.6rem;
+    border-radius: 0.4rem;
+}
+.btn-sm{
+    background-color: rgb(141, 79, 221);
+    color: white;
+    font-size: .9rem;
+    padding: .5rem;
+    width: 7rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.btn-sm:hover{
+    background-color:burlywood;
+    color: black;
+}
+#login a{
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: white;
+}
+#signup a{
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: white;
+}
+.course-item button{
+    margin-left: 5.4rem;
+    margin-top: 1.2rem;
+}
+.main-box{
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    margin-top: 1.3rem;
+}
+.left-main{
+    /* background-color: aqua; */
+    max-width: 50%;
+}
+.left-main h1{
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.6rem;
+    margin-bottom: 1.3rem;
+    padding-left: 7.2rem;
+}
+.padd-left{
+    margin-left: 7.4rem;
+}
+.crs-text{
+    font-size: 1.2rem;
+    /* font-weight: bold; */
+    font-style: oblique;
+}
+.left-main .buttons{
+    margin: 1.3rem 1.3rem 1.3rem 8rem;
+}
+.buttons button:first-child{
+    margin-right: .8rem;
+}
+.right-main{
+    /* background-color: greenyellow; */
+    max-width: 50%;
+}
+.right-main img{
+    width: 50%;
+    margin-left: 6rem;
+    border: 5px solid black;
+    border-radius: 4.4rem;
+}
+#courseH{
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 2.3rem 0;
+    text-decoration: underline;
+}
+
+.courses{
+    /* background-color: cadetblue; */
+    display: flex;
+    flex-direction: column;
+}
+.course-item{
+    /* background-color: chocolate; */
+    display: flex;
+    margin: 1.4rem;
+}
+.course-img{
+    width: 15%;
+    margin-left: 8rem; 
+}
+.course-h{
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 1.1rem;
+    text-align: center;
+}
+.desc{
+    /* background-color: chartreuse; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+    max-width: 50%;
+    padding: 1.1rem;
+}
+.desc p{
+    padding-left: 5.5rem;
+}
+
+.course-img-odd{
+    width: 17rem;
+    margin-left: 9.5rem;
+}
+.course-item-odd .left{
+    width: 50%;
+}
+.desc-odd{
+    margin-right: 5.4rem;
+   
+}
+.link-container{
+    margin: auto;
+    text-align: center;
+    
+}
+@media screen and (max-width: 1050px){
+    .nav-bar{
+        flex-direction: column;
+    }
+    .nav-links{
+        flex-direction: column;
+        display: none;
+    }
+
+}  
+
+.accordion-item{
+    line-height: 1.5rem;
+    line-break: auto;
+    background-color: rgb(207, 183, 240);
+}
+.accordion-item-py{
+    line-height: 1.5rem;
+    background-color: rgb(123, 236, 223);
+}
+
+.accordion-item-js{
+    line-height: 1.5rem;
+    line-break: auto;
+    background-color: rgb(180, 197, 233);
+}
+.loamysoil
+{
+    margin: 100px;
+    height: 300px;width: 35%; margin-left: 6rem; border: 5px solid black; border-radius: 4.4rem;
+}
+.Claysoil{
+    height: 300px;width: 400px; margin-left: 6rem; border: 5px solid black; border-radius: 4.4rem;
+
+}

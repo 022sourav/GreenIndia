@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+}
+.backgrimg{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.centered {
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 84%;
+    border: 5px solid #e4e4e4;
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  nav{
+    background-color:white;
+  }
+  span{
+      background: -webkit-linear-gradient(#eb3349, #f45c43);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+  #login a{
+      text-decoration: none;
+      font-size: 1.1rem;
+      color: rgb(32, 3, 3);
+  }
+  #signup a{
+      text-decoration: none;
+      font-size: 1.1rem;
+      color: white;
+  }
+  
+  .main-container{
+      position: absolute;
+      top: 10rem;
+  }
+  .main-container ul{
+      margin: 2rem;
+      color: white;
+      font-size: 1.3rem;
+      font-family: 'Fredoka One', cursive;
+  }
+  .btn-container{
+      font-family: 'Fredoka One', cursive;
+      color: white;
+      position: absolute;
+      top: 21rem;
+      left: 1.8rem;
+  }
+  .btn-sm{
+      background-color: rgb(244, 242, 248);
+      padding: 0.25rem 1.5rem;
+      margin: 1rem;
+      border-radius: 0.4rem;
+      cursor: pointer;
+  }
+  .btn-sm a{
+      text-decoration: none;
+      color: azure;
+      font-size: 1.5rem;
+  }
+  .btn-sm:hover{
+      background-color:whitesmoke;
+  }
+  .btn-sm:hover a{
+      color: blue;
+  }
+  
+  @media (max-width:1350px){
+      html{
+          font-size: 75%;
+      }
+  }
+  @media (max-width:1200px){
+      html{
+          font-size: 55%;
+      }
+  }
+  .page-footer font-small indigo{
+      min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; 
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  
