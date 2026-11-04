@@ -2,7 +2,7 @@
 
 GreenIndia started in 2023 as a small crop-information website (HTML, CSS, PHP). I rebuilt it as an **end-to-end data analytics project**: real government crop data → SQL database → analysis → machine learning models → interactive dashboard.
 
-The old website is still in the [`web_version`](web_version) folder.
+The original website is still in the [`web_version`](web_version) folder. It now has the same green look as the dashboard, a static dashboard page, and a data insights section on every crop page.
 
 ## Questions this project answers
 1. How did the **yield and production** of rice, wheat and sugarcane change across Indian states from 1997 to 2014?
@@ -33,7 +33,7 @@ GreenIndia/
 │   └── 04_yield_model.py       yield prediction model
 ├── outputs/                    charts, tables (CSV, usable in Power BI / Tableau), reports
 ├── models/                     saved models (created by run_all.py)
-└── web_version/                original website (2023)
+└── web_version/                website (2023, restyled to match the dashboard)
 ```
 
 ## How to run
@@ -57,6 +57,11 @@ python run_all.py
 streamlit run app.py
 ```
 The app opens at http://localhost:8501. Python 3.9 or newer is needed.
+
+## Website
+Open `web_version/dashboard.html` in a browser (double-click it). It has the same sections as the Streamlit app (Dashboard, Crop Recommender, Yield Predictor, About) as static pages, and the crop pages (`rice.html`, `wheat.html`, `sugarcane.html`) show the analysis results for each crop next to the crop information. The "Open Live App" button opens the Streamlit app at http://localhost:8501, so start it first with `streamlit run app.py`.
+
+The login and register pages (`web_version/PHP files`) need PHP and MySQL (for example XAMPP). They are not part of the data project.
 
 ## Method
 **Cleaning** (`01_build_database.py`): kept Rice, Wheat and Sugarcane (30,924 rows); removed missing production, zero area or production, the incomplete year 2015 (only 123 rows), and the top 1% extreme yield values per crop (data entry errors, e.g. a yield of 88,000 t/ha). Final data: **30,338 rows, 33 states/UTs, 644 districts, 1997-2014**. Yield = production / area (tonnes per hectare). Details are saved in `outputs/cleaning_report.txt`.

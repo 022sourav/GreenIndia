@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GreenIndia | Sugarcane</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="home.css">
     
@@ -13,45 +13,32 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Merriweather&family=Montserrat&family=Nunito:wght@200;300;400;600;700&family=Readex+Pro&family=Sacramento&display=swap');
   </style>
+  <link rel="stylesheet" href="dashboard-theme.css">
 </head>
 
 <body>
     <section>
-        <nav class="navbar navbar-expand-lg navbar-light bg-">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                <img src="logo.jpg" width="30px" height="30px" class="d-inline-block align-top" alt="">
-                  Agriculture
-              </a>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../projectagri/PHP files/index.php">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="Soil.html">Soil</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button"
-                      data-bs-toggle="dropdown" aria-expanded="false">
-                      Crops
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a id="Sugarcane" class="dropdown-item" href="sugarcane.html">Sugarcane</a></li>
-                      <li><a id="Wheat" class="dropdown-item" href="wheat.html">Wheat</a></li>
-                      <li><a id="Rice" class="dropdown-item" href="rice.html">Rice</a></li>
-                    </ul>
-                  </li>
-                </ul>
-                <!---form class="d-flex">
-                  <button id="login" class="btn btn-outline-success mx-4 btn-sm" type="submit"><a
-                      href="home.html">Register</a></button>
-                  <--button id="signup" class="btn btn-outline-success mx-4 btn-sm" type="submit"><a
-                      href="signup.html">Signup</a></button>
-                </form--->
-              </div>
-            </div>
-          </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark gi-nav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="dashboard.html"><img src="logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">GreenIndia</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="Soil.html">Soil</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Crops</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="rice.html">Rice</a></li>
+            <li><a class="dropdown-item" href="wheat.html">Wheat</a></li>
+            <li><a class="dropdown-item" href="sugarcane.html">Sugarcane</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a class="gi-btn" href="http://localhost:8501" target="_blank" title="Start the app first with: streamlit run app.py">Open Live App</a>
+    </div>
+  </div>
+</nav>
           </section>
 
 
@@ -77,7 +64,7 @@
                     Sugarcane juice can be made by pressing the stalks in a machine. It is often sold in the streets in
                     some countries. It can contain disease
             </div>
-            <img src="img\sugarcane.jpg" class="loamysoil" alt="">
+            <img src="img/sugarcane.jpg" class="loamysoil" alt="">
         </div>
 
 
@@ -85,6 +72,23 @@
 
 
     </section>
+
+<div class="gi-insights">
+  <div class="gi-section"><h2>Sugarcane in numbers (data analysis, 1997-2014)</h2></div>
+  <div class="row g-3">
+    <div class="col-md-3 col-6"><div class="gi-kpi"><div class="lab">Average yield</div><div class="val">68.10 t/ha</div></div></div>
+    <div class="col-md-3 col-6"><div class="gi-kpi"><div class="lab">Yield 1997-99</div><div class="val">66.61 t/ha</div></div></div>
+    <div class="col-md-3 col-6"><div class="gi-kpi"><div class="lab">Yield 2011-14</div><div class="val">71.83 t/ha</div></div></div>
+    <div class="col-md-3 col-6"><div class="gi-kpi"><div class="lab">Change</div><div class="val">+8%</div></div></div>
+    <div class="col-md-4"><div class="gi-card"><h3>Top producing states</h3><ul><li>Uttar Pradesh: 2,203 million t</li><li>Maharashtra: 938 million t</li><li>Karnataka: 516 million t</li><li>Tamil Nadu: 510 million t</li><li>Andhra Pradesh: 227 million t</li></ul></div></div>
+    <div class="col-md-4"><div class="gi-card"><h3>Highest average yield</h3><ul><li>Tamil Nadu: 105.63 t/ha</li><li>Karnataka: 89.87 t/ha</li><li>Maharashtra: 81.50 t/ha</li></ul><p style="margin:.4rem 0 0;color:var(--gi-muted);font-size:.85rem">States with more than 100,000 ha in total</p></div></div>
+    <div class="col-md-4"><div class="gi-card"><h3>Share of production by season</h3><ul><li>Whole Year: 66%</li><li>Kharif: 34%</li><li>Winter: 0%</li></ul></div></div>
+    <div class="col-md-12"><div class="gi-chart"><img src="charts/crop_sugarcane.png" alt="Sugarcane charts"><p>Source: district-wise crop production data (data.gov.in via Kaggle), cleaned and analysed with SQL and Python.</p></div></div>
+    <div class="col-md-12"><div class="gi-note">The crop recommendation dataset does not contain sugarcane, so the recommender cannot suggest it. The production analysis above is based on the district-wise data.</div></div>
+  </div>
+  <div style="text-align:center;margin:1rem 0"><a class="gi-btn gi-btn-green" href="dashboard.html">See the full dashboard</a></div>
+</div>
+<footer class="gi-footer">GreenIndia: Crop Analytics &nbsp;|&nbsp; Python, SQL, scikit-learn, Streamlit &nbsp;|&nbsp; <a href="https://github.com/022sourav/GreenIndia" target="_blank">View on GitHub</a></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>

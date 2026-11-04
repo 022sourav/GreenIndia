@@ -11,44 +11,29 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Merriweather&family=Montserrat&family=Nunito:wght@200;300;400;600;700&family=Readex+Pro&family=Sacramento&display=swap');
 </style>
-<title> AgroIndia</title>
+<title>GreenIndia | Soil types in India</title>
+  <link rel="stylesheet" href="dashboard-theme.css">
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-">
+<nav class="navbar navbar-expand-lg navbar-dark gi-nav">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="logo.jpg" width="30px" height="30px" class="d-inline-block align-top" alt="">
-        Agriculture
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand" href="dashboard.html"><img src="logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">GreenIndia</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../projectagri/PHP files/index.php">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Soil.html">Soil</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link active" href="Soil.html">Soil</a></li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Crop
-          </a>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Crops</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a id="comp" class="dropdown-item" href="sugarcane.html">Sugarcane</a></li>
-            <li><a id="it" class="dropdown-item" href="wheat.html">Wheat</a></li>
-            <li><a id="entc" class="dropdown-item" href="rice.html">Rice</a></li>
+            <li><a class="dropdown-item" href="rice.html">Rice</a></li>
+            <li><a class="dropdown-item" href="wheat.html">Wheat</a></li>
+            <li><a class="dropdown-item" href="sugarcane.html">Sugarcane</a></li>
           </ul>
         </li>
       </ul>
-      <!---form class="d-flex">
-        <button id="login" class="btn btn-outline-success mx-4" type="submit"><a href="login.html">Login</a></button>
-        <button id="signup" class="btn btn-outline-success mx-4" type="submit"><a href="signup.html">Signup</a></button>
-      </form-->
+      <a class="gi-btn" href="http://localhost:8501" target="_blank" title="Start the app first with: streamlit run app.py">Open Live App</a>
     </div>
   </div>
 </nav>
@@ -70,7 +55,7 @@
 
   </div>
   <div class="right-main">
-    <img src="img\soil type.jpg" alt="">
+    <img src="img/soil type.jpg" alt="">
   </div>
 </section>
 
@@ -85,17 +70,17 @@
         <button class="btn-sm pyt-btn" href="Loamysoil.html">Start Now</button>
       </a>
     </div>
-    <img  src="img\loamy soil.jpg" class="loamysoil" alt="">
+    <img  src="img/loamy soil.jpg" class="loamysoil" alt="">
   </div>
   <div class="course-item">
     <div class="left">
-      <img src="img\Clay soil.jpg" class="Claysoil" alt="">
+      <img src="img/Clay soil.jpg" class="Claysoil" alt="">
     </div>
     <div class="desc desc-odd">
       <h2 class="course-h">Clay Soil</h2>
       <p class="crs-text">Clays heavy and compact structure holds moisture well and is ideal for moisture-loving plants. Many crops will thrive in this type of soil due to the high nutrient content. Meanwhile, clay is frequently alkaline which stops plants from getting all the nutrients they require to flourish and produce a high yield.
         Clay warms up slowly making it unsuitable for sowing plants in early spring. A significant disadvantage of this soil type is that it is rather challenging to work with: it often becomes sticky and waterlogged in winter and turns into solid blocks when it dries up in summer.</p>
-      <a href="Claysoil.html">
+      <a href="claysoil.html">
         <button class="btn-sm">Start Now</button>
       </a>
     </div>
@@ -104,11 +89,11 @@
     <div class="desc">
       <h2 class="course-h">Sandy Soil</h2>
       <p class="crs-text">The main advantage of the sandy type is that it is suitable for early planting because it is the first to warm up after winter. It is not too prone to erosion due to the large size of the particles. Sandy ground has a loose structure which makes it effortless to till. For the same reason, water quickly seeps into the lower layers of the ground, washing away nutrients with it. Additionally, the sandy type is often acidic, meaning it has a low pH level. Plants growing in sandy soils may thus be deficient in the nutrients and moisture necessary for their growth.</p>
-      <a href="Sandysoil.html">
+      <a href="sandysoil.html">
         <button class="btn-sm pyt-btn">Start Now</button>
       </a>
     </div>
-    <img src="img\Sandy soil.jpg" class="loamysoil" alt="">
+    <img src="img/Sandy soil.jpg" class="loamysoil" alt="">
   </div>
 </section>
 
@@ -117,5 +102,6 @@
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 
+<footer class="gi-footer">GreenIndia: Crop Analytics &nbsp;|&nbsp; Python, SQL, scikit-learn, Streamlit &nbsp;|&nbsp; <a href="https://github.com/022sourav/GreenIndia" target="_blank">View on GitHub</a></footer>
 </body>
 </html>
