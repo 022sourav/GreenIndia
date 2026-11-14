@@ -1,7 +1,7 @@
 test,method,result,p_value
 Yield trend: Rice,Linear regression of yearly yield on year,"slope = +0.025 t/ha per year, R2 = 0.45",0.002390145522375167
 Yield trend: Wheat,Linear regression of yearly yield on year,"slope = +0.020 t/ha per year, R2 = 0.24",0.03887728298025235
-Yield trend: Sugarcane,Linear regression of yearly yield on year,"slope = +0.437 t/ha per year, R2 = 0.36",0.00818305709942521
+Yield trend: Sugarcane,Linear regression of yearly yield on year,"slope = +0.437 t/ha per year, R2 = 0.36",0.008183057099425234
 Rice yield by season,Kruskal-Wallis test across seasons,"H = 1828; medians: Autumn 1.29, Kharif 1.92, Rabi 2.52, Summer 2.25, Whole Year 1.7, Winter 1.71",0.0
 Wheat yield: Punjab vs other states,Mann-Whitney U test (one-sided),median Punjab 4.32 t/ha vs others 1.83 t/ha,7.514461020061238e-166
 Area vs yield: Rice,Spearman correlation (district-level records),rho = +0.13,2.3975886234283597e-60

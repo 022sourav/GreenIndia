@@ -1,0 +1,16 @@
+crop,state,yield_t_ha,total_area_ha,yield_rank
+Rice,Punjab,3.64,43387000.0,1
+Rice,Tamil Nadu,2.98,30358485.0,2
+Rice,Andhra Pradesh,2.96,43274661.0,3
+Rice,Telangana,2.9,23842311.0,4
+Rice,Haryana,2.84,17369835.0,5
+Sugarcane,Tamil Nadu,105.63,4830980.0,1
+Sugarcane,Karnataka,89.87,5739787.0,2
+Sugarcane,Maharashtra,81.5,11514728.0,3
+Sugarcane,West Bengal,78.53,314881.0,4
+Sugarcane,Telangana,77.79,811957.0,5
+Wheat,Punjab,4.33,52487000.0,1
+Wheat,Haryana,4.11,34589563.0,2
+Wheat,Rajasthan,2.82,33613521.0,3
+Wheat,Uttar Pradesh,2.79,168614377.0,4
+Wheat,Gujarat,2.69,13697300.0,5

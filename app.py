@@ -2,6 +2,8 @@
 # Run with:  streamlit run app.py
 
 import sqlite3
+import subprocess
+import sys
 from pathlib import Path
 import joblib
 import numpy as np
@@ -13,9 +15,20 @@ DB = BASE / "greenindia.db"
 
 st.set_page_config(page_title="GreenIndia Crop Analytics", page_icon="🌾", layout="wide")
 
-if not DB.exists():
-    st.error("Database not found. Please run  python run_all.py  first.")
-    st.stop()
+@st.cache_resource
+def build_if_missing():
+    # the database and models are not stored on GitHub, so build them on the first start
+    needed = [DB, BASE / "models" / "crop_recommender.joblib", BASE / "models" / "yield_model.joblib"]
+    if all(f.exists() for f in needed):
+        return
+    with st.spinner("First start: building the database and models (about 1 minute)..."):
+        result = subprocess.run([sys.executable, str(BASE / "run_all.py")])
+    if result.returncode != 0:
+        st.error("Could not build the data. Please run  python run_all.py  and check the error.")
+        st.stop()
+
+
+build_if_missing()
 
 
 @st.cache_data

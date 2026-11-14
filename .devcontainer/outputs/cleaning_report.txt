@@ -1,0 +1,8 @@
+Raw rows: 246091
+Rows for Rice, Wheat, Sugarcane: 30924
+Dropped 137 rows with missing production
+Dropped 20 rows with zero area or zero production
+Dropped 123 rows from 2015 (incomplete year)
+Dropped 306 rows with extreme yield (top 1% per crop)
+Final rows: 30338
+States: 33, Districts: 644, Years: 1997 to 2014

@@ -1,5 +1,7 @@
 # 🌾 GreenIndia: Crop Analytics (Rice, Wheat, Sugarcane)
 
+**Live website:** https://022sourav.github.io/GreenIndia/
+
 GreenIndia started in 2023 as a small crop-information website (HTML, CSS, PHP). I rebuilt it as an **end-to-end data analytics project**: real government crop data → SQL database → analysis → machine learning models → interactive dashboard.
 
 The original website is still in the [`web_version`](web_version) folder. It now has the same green look as the dashboard, a static dashboard page, and a data insights section on every crop page.
@@ -67,7 +69,14 @@ The website follows three steps. Open `web_version/index.html` in a browser (dou
 2. **Information** (`Soil.html`, the soil pages, `rice.html`, `wheat.html`, `sugarcane.html`): background about soils and crops, with a short "in numbers" section for each crop.
 3. **Statistics** (`dashboard.html`, `statistics.html`): the dashboard (static copy of the Streamlit app) and the statistical tests.
 
-The "Open Live App" button opens the Streamlit app at http://localhost:8501, so start it first with `streamlit run app.py`. The login and register pages (`web_version/PHP files`) need PHP and MySQL (for example XAMPP) and are not part of the data project.
+The login and register pages (`web_version/PHP files`) need PHP and MySQL (for example XAMPP) and are not part of the data project.
+
+**Putting the website online (GitHub Pages)**
+1. In the repo go to Settings > Pages and set Source to "GitHub Actions" (one time).
+2. Push to `main`. The workflow in `.github/workflows/pages.yml` publishes the `web_version` folder (without the PHP files) and updates the site after every change.
+3. The site is at `https://022sourav.github.io/GreenIndia/`.
+
+**The Streamlit app online (optional)**: GitHub Pages only hosts static pages, so the app needs its own host. Deploy it for free on Streamlit Community Cloud (repo `022sourav/GreenIndia`, branch `main`, main file `app.py`). On the first start it builds the database and models by itself (about 1 minute). Then paste the app link into `web_version/config.js` and push. All "Run the App" buttons on the website become "Open Live App" buttons. Until then they open the steps to run the app on your own computer.
 
 ## Method
 **Cleaning** (`01_build_database.py`): kept Rice, Wheat and Sugarcane (30,924 rows); removed missing production, zero area or production, the incomplete year 2015 (only 123 rows), and the top 1% extreme yield values per crop (data entry errors, e.g. a yield of 88,000 t/ha). Final data: **30,338 rows, 33 states/UTs, 644 districts, 1997-2014**. Yield = production / area (tonnes per hectare). Details are saved in `outputs/cleaning_report.txt`.

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenIndia | Statistical tests</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard-theme.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark gi-nav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"><img src="logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">GreenIndia</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navInfo" role="button" data-bs-toggle="dropdown" aria-expanded="false">Information</a>
+          <ul class="dropdown-menu" aria-labelledby="navInfo">
+            <li><a class="dropdown-item" href="Soil.html">Soil types</a></li>
+            <li><a class="dropdown-item" href="rice.html">Rice</a></li>
+            <li><a class="dropdown-item" href="wheat.html">Wheat</a></li>
+            <li><a class="dropdown-item" href="sugarcane.html">Sugarcane</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="navStats" role="button" data-bs-toggle="dropdown" aria-expanded="false">Statistics</a>
+          <ul class="dropdown-menu" aria-labelledby="navStats">
+            <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+            <li><a class="dropdown-item" href="statistics.html">Statistical tests</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a class="gi-btn gi-live" href="https://github.com/022sourav/GreenIndia#how-to-run" target="_blank" title="The live app is not deployed yet. This opens the steps to run it." data-live-text="Open Live App">Run the App</a>
+    </div>
+  </div>
+</nav>
+<!--steps--><div class="gi-steps"><div class="gi-steps-in">
+  <a class="gi-step done" href="index.html"><b>1</b> Website</a><i>&rsaquo;</i>
+  <a class="gi-step done" href="Soil.html"><b>2</b> Information</a><i>&rsaquo;</i>
+  <a class="gi-step active" href="dashboard.html"><b>3</b> Statistics</a>
+</div></div><!--/steps-->
+<div class="gi-wrap">
+  <h1 class="gi-title">Statistical tests</h1>
+  <div class="gi-caption">Step 3 of 3 | do the patterns in the data hold up? Each test below has a question, a method and a plain-English answer.</div>
+
+  <div class="gi-test"><h3>1. Is yield going up over the years?</h3><div class="method">Linear regression of the yearly national yield on the year (1997-2014)</div>
+    <div class="gi-chart"><img src="charts/13_yield_trend_tests.png" alt="Yearly yield with the fitted trend line"><p>Yearly yield with the fitted trend line</p></div>
+    <div class="answer">Yes, for all three crops. Yield increased by about +0.025 t/ha per year for rice (p = 0.002), +0.020 for wheat (p = 0.039) and +0.437 for sugarcane (p = 0.008). The wheat trend is the weakest because of the drop in 2013-2014, which may be partly a data coverage problem.</div></div>
+
+  <div class="gi-test"><h3>2. Does the season change rice yield?</h3><div class="method">Kruskal-Wallis test (yields are skewed, so a test on medians is safer than ANOVA)</div>
+    <div class="gi-chart"><img src="charts/14_rice_yield_by_season.png" alt="Rice yield by season"><p>Rice yield by season</p></div>
+    <div class="answer">Yes (H = 1828, p &lt; 0.001). Median yield in t/ha: Autumn 1.29, Whole Year 1.70, Winter 1.71, Kharif 1.92, Summer 2.25, Rabi 2.52. Rabi rice has the highest median yield and Autumn rice the lowest.</div></div>
+
+  <div class="gi-test"><h3>3. Is Punjab really better for wheat?</h3><div class="method">Mann-Whitney U test, Punjab compared with all other states (district-level records)</div>
+    <div class="gi-chart"><img src="charts/15_wheat_punjab_vs_others.png" alt="Wheat yield: Punjab vs other states"><p>Wheat yield: Punjab vs other states</p></div>
+    <div class="answer">Yes. The median wheat yield is 4.32 t/ha in Punjab and 1.83 t/ha in the other states (p &lt; 0.001). The difference is large, not only statistically significant.</div></div>
+
+  <div class="gi-test"><h3>4. Do bigger districts have higher yield?</h3><div class="method">Spearman rank correlation between sown area and yield (district-level records)</div>
+    <div class="answer">Weakly for rice (rho = +0.13), moderately for sugarcane (rho = +0.40) and clearly for wheat (rho = +0.61). All p-values are &lt; 0.001. This is an association only: big wheat districts are mostly in the irrigated north, so area is probably standing in for region.</div></div>
+
+  <div class="gi-test"><h3>5. Why does the yield model use log(yield)?</h3><div class="method">Skewness before and after a log transform</div>
+    <div class="gi-chart"><img src="charts/16_yield_skewness.png" alt="Distribution of yield before and after the log transform"><p>Distribution of yield before and after the log transform</p></div>
+    <div class="answer">Yield is right-skewed (skewness 2.0 to 0.9). Taking the log makes it much more symmetric, and it stops the huge sugarcane yields from dominating the model.</div></div>
+
+  <div class="gi-test"><h3>6. Do soil and climate differ between the 22 crops?</h3><div class="method">One-way ANOVA for each feature of the crop recommendation data. Eta squared is the share of the variation explained by the crop.</div>
+    <div class="row"><div class="col-md-6"><div class="gi-chart"><img src="charts/17_anova_effect_size.png" alt="Effect size of each feature"><p>Effect size of each feature</p></div></div>
+    <div class="col-md-6"><table class="gi-table"><tr><th>Feature</th><th>F</th><th>Eta squared</th><th>p</th></tr><tr><td>K</td><td>27,238</td><td>1.00</td><td>&lt; 0.001</td></tr><tr><td>humidity</td><td>3,104</td><td>0.97</td><td>&lt; 0.001</td></tr><tr><td>P</td><td>1,886</td><td>0.95</td><td>&lt; 0.001</td></tr><tr><td>N</td><td>898</td><td>0.90</td><td>&lt; 0.001</td></tr><tr><td>rainfall</td><td>606</td><td>0.85</td><td>&lt; 0.001</td></tr><tr><td>temperature</td><td>102</td><td>0.50</td><td>&lt; 0.001</td></tr><tr><td>ph</td><td>60</td><td>0.37</td><td>&lt; 0.001</td></tr></table></div></div>
+    <div class="answer">Every feature differs between crops (all p &lt; 0.001). K, humidity and P separate the crops almost completely (eta squared at least 0.95), while ph (0.37) and temperature (0.50) separate them least. Such a clean separation is unusual for real field data, which fits the very high accuracy of the recommender model.</div></div>
+
+  <div class="gi-test"><h3>7. How certain are the average yields?</h3><div class="method">95% confidence interval of the mean yield (t distribution, district-level records)</div>
+    <table class="gi-table"><tr><th>Crop</th><th>Records</th><th>Mean yield (t/ha)</th><th>95% CI</th></tr><tr><td>Rice</td><td>14,849</td><td>1.95</td><td>1.93 to 1.96</td></tr><tr><td>Wheat</td><td>7,781</td><td>2.06</td><td>2.04 to 2.09</td></tr><tr><td>Sugarcane</td><td>7,708</td><td>54.44</td><td>53.82 to 55.07</td></tr></table>
+    <div class="answer">The averages are estimated very precisely. These are plain averages of district-level records, so they are lower than the production-weighted national yields on the dashboard (for example, rice 2.12 t/ha), because small districts count equally here.</div></div>
+
+  <div class="gi-section"><h2>All test results</h2></div>
+  <table class="gi-table"><tr><th>Test</th><th>Method</th><th>Result</th><th>p-value</th></tr><tr><td>Yield trend: Rice</td><td>Linear regression of yearly yield on year</td><td>slope = +0.025 t/ha per year, R2 = 0.45</td><td>0.002</td></tr><tr><td>Yield trend: Wheat</td><td>Linear regression of yearly yield on year</td><td>slope = +0.020 t/ha per year, R2 = 0.24</td><td>0.039</td></tr><tr><td>Yield trend: Sugarcane</td><td>Linear regression of yearly yield on year</td><td>slope = +0.437 t/ha per year, R2 = 0.36</td><td>0.008</td></tr><tr><td>Rice yield by season</td><td>Kruskal-Wallis test across seasons</td><td>H = 1828; medians: Autumn 1.29, Kharif 1.92, Rabi 2.52, Summer 2.25, Whole Year 1.7, Winter 1.71</td><td>&lt; 0.001</td></tr><tr><td>Wheat yield: Punjab vs other states</td><td>Mann-Whitney U test (one-sided)</td><td>median Punjab 4.32 t/ha vs others 1.83 t/ha</td><td>&lt; 0.001</td></tr><tr><td>Area vs yield: Rice</td><td>Spearman correlation (district-level records)</td><td>rho = +0.13</td><td>&lt; 0.001</td></tr><tr><td>Area vs yield: Wheat</td><td>Spearman correlation (district-level records)</td><td>rho = +0.61</td><td>&lt; 0.001</td></tr><tr><td>Area vs yield: Sugarcane</td><td>Spearman correlation (district-level records)</td><td>rho = +0.40</td><td>&lt; 0.001</td></tr><tr><td>Yield distribution</td><td>Skewness before and after log transform</td><td>skewness 2.0 -> 0.9</td><td>-</td></tr></table>
+
+  <div class="gi-note"><b>Read the p-values carefully.</b> The records are district-years, not independent samples: the same district appears every year and neighbouring districts are similar. This makes the p-values look smaller than they should, so the effect sizes (medians, slopes, correlations) matter more. The data is observational, so the tests show associations, not causes.</div>
+</div>
+<!--pager--><div class="gi-pager"><a class="gi-btn gi-btn-line" href="dashboard.html">&larr; Dashboard</a><a class="gi-btn gi-btn-green" href="index.html">Back to home &rarr;</a></div><!--/pager-->
+<footer class="gi-footer">GreenIndia: Crop Analytics &nbsp;|&nbsp; Python, SQL, scikit-learn, Streamlit &nbsp;|&nbsp; <a href="https://github.com/022sourav/GreenIndia" target="_blank">View on GitHub</a></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="config.js"></script>
+<script src="app-link.js"></script>
+</body>
+</html>

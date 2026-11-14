@@ -1,0 +1,49 @@
+# Publishes the website (web_version folder) to GitHub Pages every time it changes on main.
+# One-time setup: GitHub repo > Settings > Pages > Source: "GitHub Actions".
+name: Deploy website to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "web_version/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Copy the website (PHP files are left out because GitHub Pages cannot run PHP)
+        run: |
+          mkdir _site
+          cp -r web_version/. _site/
+          rm -rf "_site/PHP files"
+          rm -f _site/*.php
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

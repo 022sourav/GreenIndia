@@ -1,0 +1,17 @@
+test,method,result,p_value
+Yield trend: Rice,Linear regression of yearly yield on year,"slope = +0.025 t/ha per year, R2 = 0.45",0.002390145522375167
+Yield trend: Wheat,Linear regression of yearly yield on year,"slope = +0.020 t/ha per year, R2 = 0.24",0.03887728298025235
+Yield trend: Sugarcane,Linear regression of yearly yield on year,"slope = +0.437 t/ha per year, R2 = 0.36",0.008183057099425234
+Rice yield by season,Kruskal-Wallis test across seasons,"H = 1828; medians: Autumn 1.29, Kharif 1.92, Rabi 2.52, Summer 2.25, Whole Year 1.7, Winter 1.71",0.0
+Wheat yield: Punjab vs other states,Mann-Whitney U test (one-sided),median Punjab 4.32 t/ha vs others 1.83 t/ha,7.514461020061238e-166
+Area vs yield: Rice,Spearman correlation (district-level records),rho = +0.13,2.3975886234283597e-60
+Area vs yield: Wheat,Spearman correlation (district-level records),rho = +0.61,0.0
+Area vs yield: Sugarcane,Spearman correlation (district-level records),rho = +0.40,1.4077530410040665e-298
+Yield distribution,Skewness before and after log transform,skewness 2.0 -> 0.9,
+ANOVA: N across 22 crops,One-way ANOVA,"F = 898, eta squared = 0.90",0.0
+ANOVA: P across 22 crops,One-way ANOVA,"F = 1886, eta squared = 0.95",0.0
+ANOVA: K across 22 crops,One-way ANOVA,"F = 27238, eta squared = 1.00",0.0
+ANOVA: temperature across 22 crops,One-way ANOVA,"F = 102, eta squared = 0.50",3.21097890534031e-305
+ANOVA: humidity across 22 crops,One-way ANOVA,"F = 3104, eta squared = 0.97",0.0
+ANOVA: ph across 22 crops,One-way ANOVA,"F = 60, eta squared = 0.37",6.493161898840142e-199
+ANOVA: rainfall across 22 crops,One-way ANOVA,"F = 606, eta squared = 0.85",0.0
