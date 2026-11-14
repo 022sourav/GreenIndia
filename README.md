@@ -22,6 +22,7 @@ Both CSV files are in the `data` folder.
 ```
 GreenIndia/
 ├── app.py                      Streamlit dashboard + prediction app
+├── GreenIndia_Analysis.ipynb   the whole analysis as a notebook
 ├── run_all.py                  runs the whole pipeline
 ├── requirements.txt
 ├── data/                       raw CSV files
@@ -30,7 +31,8 @@ GreenIndia/
 │   ├── 01_build_database.py    cleaning + SQLite database
 │   ├── 02_sql_analysis.py      runs the SQL queries, makes charts and tables
 │   ├── 03_crop_recommender.py  crop recommendation model
-│   └── 04_yield_model.py       yield prediction model
+│   ├── 04_yield_model.py       yield prediction model
+│   └── 05_statistical_analysis.py  hypothesis tests, correlation, ANOVA, confidence intervals
 ├── outputs/                    charts, tables (CSV, usable in Power BI / Tableau), reports
 ├── models/                     saved models (created by run_all.py)
 └── web_version/                website (2023, restyled to match the dashboard)
@@ -59,9 +61,13 @@ streamlit run app.py
 The app opens at http://localhost:8501. Python 3.9 or newer is needed.
 
 ## Website
-Open `web_version/dashboard.html` in a browser (double-click it). It has the same sections as the Streamlit app (Dashboard, Crop Recommender, Yield Predictor, About) as static pages, and the crop pages (`rice.html`, `wheat.html`, `sugarcane.html`) show the analysis results for each crop next to the crop information. The "Open Live App" button opens the Streamlit app at http://localhost:8501, so start it first with `streamlit run app.py`.
+The website follows three steps. Open `web_version/index.html` in a browser (double-click it) and use the step bar and the Next / Back buttons.
 
-The login and register pages (`web_version/PHP files`) need PHP and MySQL (for example XAMPP). They are not part of the data project.
+1. **Website** (`index.html`): home page that explains how the project is organised.
+2. **Information** (`Soil.html`, the soil pages, `rice.html`, `wheat.html`, `sugarcane.html`): background about soils and crops, with a short "in numbers" section for each crop.
+3. **Statistics** (`dashboard.html`, `statistics.html`): the dashboard (static copy of the Streamlit app) and the statistical tests.
+
+The "Open Live App" button opens the Streamlit app at http://localhost:8501, so start it first with `streamlit run app.py`. The login and register pages (`web_version/PHP files`) need PHP and MySQL (for example XAMPP) and are not part of the data project.
 
 ## Method
 **Cleaning** (`01_build_database.py`): kept Rice, Wheat and Sugarcane (30,924 rows); removed missing production, zero area or production, the incomplete year 2015 (only 123 rows), and the top 1% extreme yield values per crop (data entry errors, e.g. a yield of 88,000 t/ha). Final data: **30,338 rows, 33 states/UTs, 644 districts, 1997-2014**. Yield = production / area (tonnes per hectare). Details are saved in `outputs/cleaning_report.txt`.
@@ -71,6 +77,8 @@ The login and register pages (`web_version/PHP files`) need PHP and MySQL (for e
 **Crop recommender**: compared Logistic Regression, KNN, Decision Tree and Random Forest with 5-fold cross validation, then tested the best one on a held-out 20% test set.
 
 **Yield model**: predicts log(yield) from state, crop, season, year and area. It is trained on 1997-2010 and tested on 2011-2014 (a time-based split, so the test is like predicting the future). Compared with a simple baseline (average yield of the crop).
+
+**Statistical tests** (`05_statistical_analysis.py`): linear trend tests, Kruskal-Wallis, Mann-Whitney U, Spearman correlation, one-way ANOVA with effect sizes, skewness check and 95% confidence intervals.
 
 ## Results
 **Crop recommendation (22 crops)**
@@ -101,6 +109,14 @@ The Random Forest reduces the rice and wheat error by about 30% compared with th
 - Wheat is almost fully a Rabi crop; rice is mainly Kharif, and sugarcane is mostly a "Whole Year" crop.
 - Haryana had the strongest rice yield growth among large producers (+37% between 1998-2000 and 2012-2014).
 
+**Statistical tests**
+- Yield is rising: +0.025 t/ha per year for rice (p = 0.002), +0.020 for wheat (p = 0.039) and +0.44 for sugarcane (p = 0.008). The wheat trend is the weakest.
+- Season matters for rice (Kruskal-Wallis, p < 0.001): Rabi has the highest median yield (2.52 t/ha) and Autumn the lowest (1.29 t/ha).
+- Punjab's median wheat yield is 4.32 t/ha compared with 1.83 t/ha in the other states (Mann-Whitney U, p < 0.001).
+- Larger districts tend to have higher yield (Spearman rho: rice 0.13, sugarcane 0.40, wheat 0.61), but this is an association, not a cause.
+- Yield is right-skewed (skewness 2.0, and 0.9 after a log transform), which is why the yield model predicts log(yield).
+- All 7 soil and climate features differ between the 22 crops (ANOVA, p < 0.001). Potassium, humidity and phosphorus separate the crops almost completely (eta squared at least 0.95), pH the least (0.37).
+
 ## Charts
 | | |
 |---|---|
@@ -111,11 +127,12 @@ The Random Forest reduces the rice and wheat error by about 30% compared with th
 - The production data ends in 2014, and the number of districts reporting is lower in the last years, so the drop of wheat yield in 2013-2014 may partly be a data coverage issue.
 - Some very large yield changes (for example Chhattisgarh) are probably caused by state boundary changes in 2000 and not real farming changes.
 - The yield model has no weather or soil inputs, because the production dataset does not contain them. The two datasets are separate: the recommender uses soil and climate measurements, the production data has no such measurements.
+- The p-values of the statistical tests are optimistic, because district-year records are not independent samples. The effect sizes matter more.
 - The crop recommendation dataset looks very clean (99% accuracy is easy), so real-world accuracy would be lower.
 - This is a learning project, not agronomic advice.
 
 ## Tools
-Python, pandas, NumPy, SQL (SQLite), scikit-learn, matplotlib, seaborn, Streamlit
+Python, pandas, NumPy, SciPy, SQL (SQLite), scikit-learn, matplotlib, seaborn, Streamlit, HTML/CSS/Bootstrap
 
 ## Next steps
 - Add rainfall and temperature data for each state and year to the yield model

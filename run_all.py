@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent
-steps = ["01_build_database.py", "02_sql_analysis.py", "03_crop_recommender.py", "04_yield_model.py"]
+steps = ["01_build_database.py", "02_sql_analysis.py", "03_crop_recommender.py", "04_yield_model.py", "05_statistical_analysis.py"]
 
 for step in steps:
     print(f"\n===== Running {step} =====")

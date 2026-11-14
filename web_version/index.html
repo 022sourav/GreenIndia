@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenIndia | Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard-theme.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark gi-nav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"><img src="logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">GreenIndia</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navInfo" role="button" data-bs-toggle="dropdown" aria-expanded="false">Information</a>
+          <ul class="dropdown-menu" aria-labelledby="navInfo">
+            <li><a class="dropdown-item" href="Soil.html">Soil types</a></li>
+            <li><a class="dropdown-item" href="rice.html">Rice</a></li>
+            <li><a class="dropdown-item" href="wheat.html">Wheat</a></li>
+            <li><a class="dropdown-item" href="sugarcane.html">Sugarcane</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navStats" role="button" data-bs-toggle="dropdown" aria-expanded="false">Statistics</a>
+          <ul class="dropdown-menu" aria-labelledby="navStats">
+            <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+            <li><a class="dropdown-item" href="statistics.html">Statistical tests</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a class="gi-btn" href="http://localhost:8501" target="_blank" title="Start the app first with: streamlit run app.py">Open Live App</a>
+    </div>
+  </div>
+</nav>
+<!--steps--><div class="gi-steps"><div class="gi-steps-in">
+  <a class="gi-step active" href="index.html"><b>1</b> Website</a><i>&rsaquo;</i>
+  <a class="gi-step " href="Soil.html"><b>2</b> Information</a><i>&rsaquo;</i>
+  <a class="gi-step " href="dashboard.html"><b>3</b> Statistics</a>
+</div></div><!--/steps-->
+<div class="gi-hero"><div class="gi-hero-in">
+  <h1>🌾 GreenIndia</h1>
+  <p>Learn about the soils and crops of India, then explore what the data says: production, yield and a crop recommendation model for rice, wheat and sugarcane.</p>
+  <a class="gi-btn" href="Soil.html">Start learning</a>
+  <a class="gi-btn gi-btn-ghost" href="dashboard.html">Jump to the statistics</a>
+</div></div>
+<div class="gi-home">
+  <div class="gi-section"><h2>How this project is organised</h2></div>
+  <div class="row g-3">
+    <div class="col-md-4"><div class="gi-stepcard"><div class="num">1</div><h3>Website</h3>
+      <p>You are here. GreenIndia started as a small crop information website and is now a complete data analytics project.</p>
+      <a class="gi-link" href="https://github.com/022sourav/GreenIndia" target="_blank">GitHub repository</a></div></div>
+    <div class="col-md-4"><div class="gi-stepcard"><div class="num">2</div><h3>Information</h3>
+      <p>The background: how the main soil types and the three crops work in Indian farming.</p>
+      <a class="gi-link" href="Soil.html">Soil types</a><a class="gi-link" href="rice.html">Rice</a><a class="gi-link" href="wheat.html">Wheat</a><a class="gi-link" href="sugarcane.html">Sugarcane</a></div></div>
+    <div class="col-md-4"><div class="gi-stepcard"><div class="num">3</div><h3>Statistics</h3>
+      <p>What the data says: SQL analysis, hypothesis tests, a crop recommender and a yield prediction model.</p>
+      <a class="gi-link" href="dashboard.html">Dashboard</a><a class="gi-link" href="statistics.html">Statistical tests</a><a class="gi-link" href="http://localhost:8501" target="_blank">Live app</a></div></div>
+  </div>
+  <div class="gi-section"><h2>The project in numbers</h2></div>
+  <div class="row g-3"><div class="col-md-3 col-6"><div class="gi-kpi"><div class="lab">Records analysed</div><div class="val">30,338</div></div></div><div class="col-md-3 col-6"><div class="gi-kpi"><div class="lab">States / UTs</div><div class="val">33</div></div></div><div class="col-md-3 col-6"><div class="gi-kpi"><div class="lab">Years covered</div><div class="val">1997-2014</div></div></div><div class="col-md-3 col-6"><div class="gi-kpi"><div class="lab">Crop recommender accuracy</div><div class="val">99.5%</div></div></div></div>
+  <div class="gi-section"><h2>Tools used</h2></div>
+  <p>Python (pandas, NumPy, SciPy, scikit-learn, matplotlib, seaborn), SQL (SQLite), Streamlit, HTML, CSS and Bootstrap.</p>
+</div>
+<!--pager--><div class="gi-pager"><span></span><a class="gi-btn gi-btn-green" href="Soil.html">Next: Soil types &rarr;</a></div><!--/pager-->
+<footer class="gi-footer">GreenIndia: Crop Analytics &nbsp;|&nbsp; Python, SQL, scikit-learn, Streamlit &nbsp;|&nbsp; <a href="https://github.com/022sourav/GreenIndia" target="_blank">View on GitHub</a></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
